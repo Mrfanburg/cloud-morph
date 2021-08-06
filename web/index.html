@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title id="app-title">Crossgate Cloud1</title>
+    <title id="app-title">Crossgate Online</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="/static/css/main.css" rel="stylesheet" />
 </head>
 
 <body>
     <style>
-        body {margin:0; border:0; padding:0 overflow:hidden; width:100%; position:fixed}
+        html,body {margin:0; border:0; padding:0 overflow:hidden; width:100%; height:100% position:absolute}
     </style>
+
+
 <script>
-    document.write('<center>');
-    var garo = window.innerHeight*4/3
-    document.write('<iframe frameborder="0" scrolling="no" width="',garo,'" height="',window.innerHeight,'" src="/static/embed/embed.html"></iframe>');
-    document.write('</center>');
+if (window.innerHeight > window.innerWidth)
+{
+document.write('<div class="inner"; style="zoom:',cgwidth,'; width:960; height:630; position:fixed; top:-90px; left:0px;">')
+document.write('<iframe src="/static/embed/embed.html" width="960" height="630" scrolling="no" frameborder="0"></iframe></div>')
+}
+else
+{
+var cgwidth = window.innerHeight*16/9/960
+var cgmargin = (window.innerWidth - window.innerHeight*16/9)/2/cgwidth
+document.write('<div class="inner"; style="zoom:',cgwidth,'; width:960; height:630; position:fixed; top:-90px; margin-left:',cgmargin,'px; left:0px;">')
+document.write('<iframe src="/static/embed/embed.html" width="960" height="630" scrolling="no" frameborder="0"></iframe></div>')
+}
 </script>
+
+
+
+
+
+
+
+
+
+
   <script src="/static/js/log.js"></script>
   <script src="/static/js/env.js"></script>
   <script src="/static/js/event/event.js"></script>
